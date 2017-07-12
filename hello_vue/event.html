@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="example-1">
+     <button v-on:click="counter += 1">增加 1</button>
+     <p>这个按钮被点击了 {{ counter }} 次。</p>
+   </div>
+
+    <div id="example-2">
+      <button type="button" v-on:click="show('hello vuejs!')" >点击我</button>
+    </div>
+
+    <div id="example-3">
+      <input v-on:keyup.enter="submit">
+    </div>
+</body>
+
+<script>
+
+  var app = new Vue({
+    el:"#example-1",
+    data:{
+      counter:0
+    }
+  })
+
+  var app2 = new Vue({
+    el:"#example-2",
+    methods:{
+      show:function (message) {
+        alert(message);
+      }
+    }
+  })
+  var app3 = new Vue({
+    el:"#example-3",
+    methods:{
+      submit:function () {
+        alert('Enter clicked ');
+      }
+    }
+  })
+
+</script>
+
+</html>
